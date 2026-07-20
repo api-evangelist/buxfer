@@ -1,0 +1,33 @@
+generated: '2026-07-18'
+method: searched
+source: openapi/buxfer-openapi.yml
+docs: https://www.buxfer.com/help/api
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+  model: login-token
+  notes: >-
+    Buxfer does not use OAuth. A client authenticates once with the account
+    email and password via the login operation, which returns a unique ephemeral
+    token. That token is then passed as a `token` query parameter on every
+    subsequent request. There are no OAuth scopes; access is full-account.
+login_flow:
+  operation: login
+  request:
+    email: account email
+    password: account password
+  returns: token
+  token_param: token
+  token_lifetime: ephemeral
+schemes:
+- name: token
+  type: apiKey
+  in: query
+  parameter: token
+  description: >-
+    Ephemeral token returned by the login operation, passed as a query parameter
+    on every subsequent request.
+  sources:
+  - openapi/buxfer-openapi.yml

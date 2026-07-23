@@ -1,0 +1,70 @@
+openapi: 3.1.0
+info:
+  title: Buxfer Accounts API
+  version: '1.0'
+  description: 'Faithful OpenAPI representation of the publicly documented Buxfer REST API (https://www.buxfer.com/help/api). Buxfer is a personal finance and money management platform; this API lets a client read accounts, transactions, tags, budgets, reminders, groups, contacts and loans, and create/edit/delete transactions and upload statements. Authentication is a login call that returns an ephemeral token which must be passed as a `token` query parameter on every subsequent request. Responses use a JSON envelope with a `response` object whose `status` is either `OK` or `ERROR: <description>`.'
+  contact:
+    name: Buxfer Support
+    url: https://www.buxfer.com/help/
+  x-apievangelist-method: generated
+  x-apievangelist-source: https://www.buxfer.com/help/api
+servers:
+- url: https://www.buxfer.com/api
+  description: Buxfer production API
+security:
+- token: []
+tags:
+- name: Accounts
+  description: List accounts and balances.
+paths:
+  /accounts:
+    get:
+      operationId: listAccounts
+      tags:
+      - Accounts
+      summary: List accounts
+      description: List all accounts with current balances and last-sync timestamps.
+      parameters:
+      - name: token
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Accounts list.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                      accounts:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Account'
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        bank:
+          type: string
+        balance:
+          type: number
+        lastSynced:
+          type: string
+  securitySchemes:
+    token:
+      type: apiKey
+      in: query
+      name: token
+      description: Ephemeral token returned by the login operation, passed as a query parameter on every subsequent request.

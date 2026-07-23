@@ -1,0 +1,416 @@
+openapi: 3.1.0
+info:
+  title: Buxfer Accounts Transactions API
+  version: '1.0'
+  description: 'Faithful OpenAPI representation of the publicly documented Buxfer REST API (https://www.buxfer.com/help/api). Buxfer is a personal finance and money management platform; this API lets a client read accounts, transactions, tags, budgets, reminders, groups, contacts and loans, and create/edit/delete transactions and upload statements. Authentication is a login call that returns an ephemeral token which must be passed as a `token` query parameter on every subsequent request. Responses use a JSON envelope with a `response` object whose `status` is either `OK` or `ERROR: <description>`.'
+  contact:
+    name: Buxfer Support
+    url: https://www.buxfer.com/help/
+  x-apievangelist-method: generated
+  x-apievangelist-source: https://www.buxfer.com/help/api
+servers:
+- url: https://www.buxfer.com/api
+  description: Buxfer production API
+security:
+- token: []
+tags:
+- name: Transactions
+  description: Create, edit, delete, list and import transactions.
+paths:
+  /transaction_add:
+    post:
+      operationId: addTransaction
+      tags:
+      - Transactions
+      summary: Add a transaction
+      description: Create an expense, income, refund, payment, transfer, investment, shared bill, loan or settlement transaction.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TransactionWrite'
+      responses:
+        '200':
+          description: The created transaction.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionMutationResponse'
+        '400':
+          description: Validation error in the envelope status.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /transaction_edit:
+    post:
+      operationId: editTransaction
+      tags:
+      - Transactions
+      summary: Edit a transaction
+      description: Modify an existing transaction identified by id.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              allOf:
+              - type: object
+                required:
+                - id
+                properties:
+                  id:
+                    type: integer
+              - $ref: '#/components/schemas/TransactionWrite'
+      responses:
+        '200':
+          description: The updated transaction.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionMutationResponse'
+        '400':
+          description: Validation error in the envelope status.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /transaction_delete:
+    post:
+      operationId: deleteTransaction
+      tags:
+      - Transactions
+      summary: Delete a transaction
+      description: Remove a transaction identified by id.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - id
+              properties:
+                id:
+                  type: integer
+      responses:
+        '200':
+          description: Delete acknowledgement (status only).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+        '400':
+          description: Error in the envelope status.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /upload_statement:
+    post:
+      operationId: uploadStatement
+      tags:
+      - Transactions
+      summary: Upload a statement
+      description: Import a bank or credit-card statement into an account.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - accountId
+              - statement
+              properties:
+                accountId:
+                  type: integer
+                statement:
+                  type: string
+                  description: Raw statement text content.
+                dateFormat:
+                  type: string
+                  enum:
+                  - MM/DD/YYYY
+                  - DD/MM/YYYY
+      responses:
+        '200':
+          description: Upload result.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                      uploaded:
+                        type: boolean
+                      balance:
+                        type: number
+        '400':
+          description: Error in the envelope status.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /transactions:
+    get:
+      operationId: listTransactions
+      tags:
+      - Transactions
+      summary: List transactions
+      description: Retrieve transactions, optionally filtered by account, tag, date range, budget, contact, group or status. Returns at most 100 transactions per page; use the `page` parameter to paginate.
+      parameters:
+      - name: token
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: accountId
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: accountName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: tagId
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: tagName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: startDate
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date
+      - name: endDate
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date
+      - name: budgetId
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: budgetName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: contactId
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: contactName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: groupId
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: groupName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: status
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - pending
+          - reconciled
+          - cleared
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          minimum: 1
+      responses:
+        '200':
+          description: A page of transactions.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                      numTransactions:
+                        type: integer
+                      transactions:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Transaction'
+components:
+  schemas:
+    TransactionMutationResponse:
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            status:
+              type: string
+            id:
+              type: integer
+            description:
+              type: string
+            date:
+              type: string
+            type:
+              type: string
+            amount:
+              type: number
+            expenseAmount:
+              type: number
+            accountId:
+              type: integer
+            accountName:
+              type: string
+            tags:
+              type: string
+            tagNames:
+              type: string
+            status_field:
+              type: string
+            sortDate:
+              type: string
+    ErrorResponse:
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            status:
+              type: string
+              description: 'Error status string of the form: ERROR: <description>'
+              example: 'ERROR: invalid token'
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: integer
+        description:
+          type: string
+        date:
+          type: string
+        type:
+          type: string
+        amount:
+          type: number
+        accountId:
+          type: integer
+        tags:
+          type: string
+        extraInfo:
+          type: string
+    StatusResponse:
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            status:
+              type: string
+              example: OK
+    TransactionWrite:
+      type: object
+      required:
+      - description
+      - amount
+      - accountId
+      - type
+      properties:
+        description:
+          type: string
+        amount:
+          type: number
+        accountId:
+          type: integer
+        fromAccountId:
+          type: integer
+          description: Source account for transfers.
+        toAccountId:
+          type: integer
+          description: Destination account for transfers.
+        date:
+          type: string
+          format: date
+          description: YYYY-MM-DD.
+        tags:
+          type: string
+          description: Comma-separated tag names.
+        type:
+          type: string
+          enum:
+          - expense
+          - income
+          - refund
+          - payment
+          - transfer
+          - investment_buy
+          - investment_sell
+          - investment_dividend
+          - capital_gain
+          - capital_loss
+          - sharedBill
+          - paidForFriend
+          - settlement
+          - loan
+        status:
+          type: string
+          enum:
+          - cleared
+          - pending
+        payers:
+          type: string
+          description: JSON array of payers (sharedBill).
+        sharers:
+          type: string
+          description: JSON array of sharers (sharedBill).
+        isEvenSplit:
+          type: boolean
+          description: Even split flag (sharedBill).
+        loanedBy:
+          type: string
+          description: uid or email (loan).
+        borrowedBy:
+          type: string
+          description: uid or email (loan).
+        paidBy:
+          type: string
+          description: uid or email (paidForFriend).
+        paidFor:
+          type: string
+          description: uid or email (paidForFriend).
+  securitySchemes:
+    token:
+      type: apiKey
+      in: query
+      name: token
+      description: Ephemeral token returned by the login operation, passed as a query parameter on every subsequent request.

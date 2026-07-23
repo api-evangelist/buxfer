@@ -1,0 +1,84 @@
+openapi: 3.1.0
+info:
+  title: Buxfer Accounts Authentication API
+  version: '1.0'
+  description: 'Faithful OpenAPI representation of the publicly documented Buxfer REST API (https://www.buxfer.com/help/api). Buxfer is a personal finance and money management platform; this API lets a client read accounts, transactions, tags, budgets, reminders, groups, contacts and loans, and create/edit/delete transactions and upload statements. Authentication is a login call that returns an ephemeral token which must be passed as a `token` query parameter on every subsequent request. Responses use a JSON envelope with a `response` object whose `status` is either `OK` or `ERROR: <description>`.'
+  contact:
+    name: Buxfer Support
+    url: https://www.buxfer.com/help/
+  x-apievangelist-method: generated
+  x-apievangelist-source: https://www.buxfer.com/help/api
+servers:
+- url: https://www.buxfer.com/api
+  description: Buxfer production API
+security:
+- token: []
+tags:
+- name: Authentication
+  description: Obtain an ephemeral API token.
+paths:
+  /login:
+    post:
+      operationId: login
+      tags:
+      - Authentication
+      summary: Log in and obtain an API token
+      description: Authenticate with an account email and password and receive a unique ephemeral token to include as the `token` parameter on all other calls.
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - email
+              - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Login result with token on success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '400':
+          description: Invalid credentials (returned as an ERROR status in the envelope).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    LoginResponse:
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            status:
+              type: string
+            token:
+              type: string
+              description: Ephemeral API token.
+    ErrorResponse:
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            status:
+              type: string
+              description: 'Error status string of the form: ERROR: <description>'
+              example: 'ERROR: invalid token'
+  securitySchemes:
+    token:
+      type: apiKey
+      in: query
+      name: token
+      description: Ephemeral token returned by the login operation, passed as a query parameter on every subsequent request.

@@ -1,22 +1,216 @@
 aid: buxfer
 name: Buxfer
-description: Buxfer is a company surfaced as a portfolio company of y-combinator and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Buxfer is a personal finance and money management platform that consolidates
+  bank, investment and retirement accounts in one place. It connects to 20,000+
+  banks across 70+ countries, tracks assets in 100+ currencies, and provides
+  budgeting with real-time alerts, expense forecasting, net-worth projection,
+  automatic transaction tagging with custom rules, investment and retirement
+  planning, shared-expense groups, and encrypted cloud backups to Dropbox,
+  Google Drive or OneDrive. Buxfer exposes a JSON HTTP API for reading accounts,
+  transactions, tags, budgets, reminders, groups, contacts and loans, and for
+  creating, editing and deleting transactions and uploading statements.
+  Authentication uses a login call that returns an ephemeral token passed on
+  every subsequent request. Buxfer is a Y Combinator company.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.buxfer.com/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/buxfer/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - y-combinator
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: portfolio-lead-enriched
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- Personal Finance
+- Money Management
+- Budgeting
+- Banking
+- Fintech
+- Financial Data
+- Transactions
+- Investments
+- Expense Tracking
+apis:
+- aid: buxfer:buxfer-accounts-api
+  name: Buxfer Accounts API
+  description: List accounts and balances.
+  humanURL: https://www.buxfer.com/help/api
+  baseURL: https://www.buxfer.com/api
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/buxfer-accounts-api-openapi.yml
+  - type: Authentication
+    url: authentication/buxfer-authentication.yml
+  - type: Conventions
+    url: conventions/buxfer-conventions.yml
+  - type: ErrorCatalog
+    url: errors/buxfer-problem-types.yml
+  - type: DataModel
+    url: data-model/buxfer-data-model.yml
+  - type: Conformance
+    url: conformance/buxfer-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/buxfer-lifecycle.yml
+- aid: buxfer:buxfer-authentication-api
+  name: Buxfer Authentication API
+  description: Obtain an ephemeral API token.
+  humanURL: https://www.buxfer.com/help/api
+  baseURL: https://www.buxfer.com/api
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/buxfer-authentication-api-openapi.yml
+  - type: Authentication
+    url: authentication/buxfer-authentication.yml
+  - type: Conventions
+    url: conventions/buxfer-conventions.yml
+  - type: ErrorCatalog
+    url: errors/buxfer-problem-types.yml
+  - type: DataModel
+    url: data-model/buxfer-data-model.yml
+  - type: Conformance
+    url: conformance/buxfer-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/buxfer-lifecycle.yml
+- aid: buxfer:buxfer-organization-api
+  name: Buxfer Organization API
+  description: Tags, budgets, reminders.
+  humanURL: https://www.buxfer.com/help/api
+  baseURL: https://www.buxfer.com/api
+  tags:
+  - Organization
+  properties:
+  - type: OpenAPI
+    url: openapi/buxfer-organization-api-openapi.yml
+  - type: Authentication
+    url: authentication/buxfer-authentication.yml
+  - type: Conventions
+    url: conventions/buxfer-conventions.yml
+  - type: ErrorCatalog
+    url: errors/buxfer-problem-types.yml
+  - type: DataModel
+    url: data-model/buxfer-data-model.yml
+  - type: Conformance
+    url: conformance/buxfer-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/buxfer-lifecycle.yml
+- aid: buxfer:buxfer-social-api
+  name: Buxfer Social API
+  description: Groups, contacts and loans for shared expenses.
+  humanURL: https://www.buxfer.com/help/api
+  baseURL: https://www.buxfer.com/api
+  tags:
+  - Social
+  properties:
+  - type: OpenAPI
+    url: openapi/buxfer-social-api-openapi.yml
+  - type: Authentication
+    url: authentication/buxfer-authentication.yml
+  - type: Conventions
+    url: conventions/buxfer-conventions.yml
+  - type: ErrorCatalog
+    url: errors/buxfer-problem-types.yml
+  - type: DataModel
+    url: data-model/buxfer-data-model.yml
+  - type: Conformance
+    url: conformance/buxfer-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/buxfer-lifecycle.yml
+- aid: buxfer:buxfer-transactions-api
+  name: Buxfer Transactions API
+  description: Create, edit, delete, list and import transactions.
+  humanURL: https://www.buxfer.com/help/api
+  baseURL: https://www.buxfer.com/api
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/buxfer-transactions-api-openapi.yml
+  - type: Authentication
+    url: authentication/buxfer-authentication.yml
+  - type: Conventions
+    url: conventions/buxfer-conventions.yml
+  - type: ErrorCatalog
+    url: errors/buxfer-problem-types.yml
+  - type: DataModel
+    url: data-model/buxfer-data-model.yml
+  - type: Conformance
+    url: conformance/buxfer-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/buxfer-lifecycle.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: TrustCenter
+  url: security/buxfer-trust-center.yml
+- type: Compliance
+  url: https://www.buxfer.com/help/security
+- type: WellKnown
+  url: well-known/buxfer-well-known.yml
+- type: DeveloperPortal
+  url: https://www.buxfer.com/help/api
+- type: Documentation
+  url: https://www.buxfer.com/help/api
+- type: APIReference
+  url: https://www.buxfer.com/help/api
+- type: Support
+  url: https://www.buxfer.com/help/
+- type: Blog
+  url: https://blog.buxfer.com
+- type: Pricing
+  url: https://www.buxfer.com/pricing/
+- type: SignUp
+  url: https://www.buxfer.com/signup/
+- type: Login
+  url: https://www.buxfer.com/login/
+- type: TermsOfService
+  url: https://www.buxfer.com/terms/
+- type: PrivacyPolicy
+  url: https://www.buxfer.com/privacy/
+- type: Authentication
+  url: authentication/buxfer-authentication.yml
+- type: Conventions
+  url: conventions/buxfer-conventions.yml
+- type: DataModel
+  url: data-model/buxfer-data-model.yml
+- type: ErrorCatalog
+  url: errors/buxfer-problem-types.yml
+- type: Conformance
+  url: conformance/buxfer-conformance.yml
+- type: Lifecycle
+  url: lifecycle/buxfer-lifecycle.yml
+- type: MCPServer
+  url: mcp/buxfer-mcp.yml
+- type: LLMsTxt
+  url: llms/buxfer-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DomainSecurity
+  url: security/buxfer-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

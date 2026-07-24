@@ -1,0 +1,32 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/buxfer-openapi.yml
+docs: https://www.buxfer.com/help/api
+standards:
+- id: oauth2
+  conforms: false
+  evidence: Auth is a login-token (apiKey in query); no oauth2 securitySchemes.
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a custom status-string envelope, not application/problem+json.
+- id: rfc8594-sunset-header
+  conforms: false
+- id: json-api
+  conforms: false
+- id: pagination
+  conforms: true
+  evidence: transactions supports page-number pagination (page param, 100/page, numTransactions total).
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key header/param documented.
+- id: tls
+  conforms: true
+  evidence: API served over HTTPS (TLS 1.2); see security/buxfer-domain-security.yml.
+- id: iso-27001
+  conforms: true
+  evidence: Published on https://www.buxfer.com/help/security; see security/buxfer-trust-center.yml.
+- id: pci-dss
+  conforms: true
+  evidence: Published on https://www.buxfer.com/help/security; see security/buxfer-trust-center.yml.

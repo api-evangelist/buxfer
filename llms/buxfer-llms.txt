@@ -1,0 +1,31 @@
+# Buxfer
+
+> Buxfer is a personal finance and money management platform that consolidates bank, investment and retirement accounts in one place. It exposes a JSON HTTP API for reading accounts, transactions, tags, budgets, reminders, groups, contacts and loans, and for creating, editing and deleting transactions and uploading statements. Authentication uses a login call that returns an ephemeral token passed as a `token` query parameter on every subsequent request.
+
+## APIs
+
+- [Buxfer API](https://www.buxfer.com/help/api): JSON HTTP API for the Buxfer personal-finance platform. Base URL https://www.buxfer.com/api.
+
+## Specs
+
+- [OpenAPI (generated)](https://raw.githubusercontent.com/api-evangelist/buxfer/refs/heads/main/openapi/buxfer-openapi.yml): Faithful OpenAPI 3.1 representation of the documented API.
+- [OpenAPI Overlay](https://raw.githubusercontent.com/api-evangelist/buxfer/refs/heads/main/overlays/buxfer-openapi-overlay.yaml): API Evangelist enhancements.
+
+## Reference
+
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/buxfer/refs/heads/main/authentication/buxfer-authentication.yml): Login-token model.
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/buxfer/refs/heads/main/conventions/buxfer-conventions.yml): Envelope, pagination, versioning, error semantics.
+- [Error catalog](https://raw.githubusercontent.com/api-evangelist/buxfer/refs/heads/main/errors/buxfer-problem-types.yml): Error envelope and conditions.
+- [Data model](https://raw.githubusercontent.com/api-evangelist/buxfer/refs/heads/main/data-model/buxfer-data-model.yml): Entities and relationships.
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/buxfer/refs/heads/main/conformance/buxfer-conformance.yml): Standards posture.
+
+## Docs
+
+- [Developer / API docs](https://www.buxfer.com/help/api)
+- [Help & Support](https://www.buxfer.com/help/)
+- [Security](https://www.buxfer.com/help/security)
+- [Pricing](https://www.buxfer.com/pricing/)
+- [Sign up](https://www.buxfer.com/signup/)
+- [Blog](https://blog.buxfer.com)
+- [Terms of Service](https://www.buxfer.com/terms/)
+- [Privacy Policy](https://www.buxfer.com/privacy/)

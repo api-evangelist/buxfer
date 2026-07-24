@@ -1,0 +1,50 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.buxfer.com/help/api
+derived_from: openapi/buxfer-openapi.yml
+format: custom-envelope
+envelope:
+  shape: '{ "response": { "status": "ERROR: <description>" } }'
+  status_field: response.status
+  error_prefix: 'ERROR: '
+  note: >-
+    Buxfer does not use HTTP problem+json (RFC 9457). Errors are returned in the
+    JSON envelope as a status string beginning with "ERROR: " followed by a
+    human-readable description. There is no numeric error-code registry; the text
+    after the prefix is the machine-visible detail.
+problems:
+- condition: missing-or-invalid-token
+  status_string: 'ERROR: <token error description>'
+  title: Missing or invalid token
+  remediation: >-
+    Every operation except login requires a valid token query parameter obtained
+    from login. Re-authenticate to obtain a fresh ephemeral token.
+  applies_to:
+  - listTransactions
+  - listAccounts
+  - listTags
+  - listBudgets
+  - listReminders
+  - listGroups
+  - listContacts
+  - listLoans
+  - addTransaction
+  - editTransaction
+  - deleteTransaction
+  - uploadStatement
+- condition: invalid-credentials
+  status_string: 'ERROR: <login error description>'
+  title: Invalid login credentials
+  remediation: Verify the account email and password supplied to login.
+  applies_to:
+  - login
+- condition: invalid-transaction-parameters
+  status_string: 'ERROR: <validation description>'
+  title: Invalid or missing transaction parameters
+  remediation: >-
+    Ensure required fields (description, amount, accountId, type) are present and
+    that type-specific fields (payers/sharers for sharedBill, loanedBy/borrowedBy
+    for loan, paidBy/paidFor for paidForFriend) are supplied for those types.
+  applies_to:
+  - addTransaction
+  - editTransaction

@@ -1,0 +1,52 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: openapi/buxfer-openapi.yml
+note: >-
+  No official Buxfer MCP server was found. This is a candidate tool list derived
+  one-to-one from the documented Buxfer API operations. Auth would bind the
+  login-token model (authentication/buxfer-authentication.yml).
+server:
+  name: buxfer
+  transport: http
+  url: null
+tools:
+- name: login
+  description: Authenticate with email + password and return an ephemeral token.
+  source_operation: openapi/buxfer-openapi.yml#login
+- name: list_transactions
+  description: List transactions filtered by account, tag, date, budget, contact, group or status.
+  source_operation: openapi/buxfer-openapi.yml#listTransactions
+- name: add_transaction
+  description: Create an expense, income, transfer, investment, shared bill or loan transaction.
+  source_operation: openapi/buxfer-openapi.yml#addTransaction
+- name: edit_transaction
+  description: Modify an existing transaction by id.
+  source_operation: openapi/buxfer-openapi.yml#editTransaction
+- name: delete_transaction
+  description: Delete a transaction by id.
+  source_operation: openapi/buxfer-openapi.yml#deleteTransaction
+- name: upload_statement
+  description: Import a bank or credit-card statement into an account.
+  source_operation: openapi/buxfer-openapi.yml#uploadStatement
+- name: list_accounts
+  description: List accounts with balances and last-sync timestamps.
+  source_operation: openapi/buxfer-openapi.yml#listAccounts
+- name: list_loans
+  description: List outstanding loans with friends and groups.
+  source_operation: openapi/buxfer-openapi.yml#listLoans
+- name: list_tags
+  description: List transaction tags with hierarchy.
+  source_operation: openapi/buxfer-openapi.yml#listTags
+- name: list_budgets
+  description: List budgets with limits and remaining balances.
+  source_operation: openapi/buxfer-openapi.yml#listBudgets
+- name: list_reminders
+  description: List financial reminders.
+  source_operation: openapi/buxfer-openapi.yml#listReminders
+- name: list_groups
+  description: List shared-expense groups with member balances.
+  source_operation: openapi/buxfer-openapi.yml#listGroups
+- name: list_contacts
+  description: List contacts with outstanding balances.
+  source_operation: openapi/buxfer-openapi.yml#listContacts

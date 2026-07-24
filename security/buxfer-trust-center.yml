@@ -1,0 +1,13 @@
+generated: '2026-07-18'
+method: searched
+probe: true
+source: https://www.buxfer.com/help/security
+url: https://www.buxfer.com/help/security
+certifications:
+- ISO 27001
+- PCI DSS
+evidence:
+- source: https://www.buxfer.com/help/security
+  keywords:
+  - iso/iec 27001
+  - pci dss

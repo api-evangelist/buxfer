@@ -1,0 +1,52 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.buxfer.com/help/api
+derived_from: openapi/buxfer-openapi.yml
+authentication:
+  style: login-token
+  detail: >-
+    Call login with email + password to receive an ephemeral token, then pass it
+    as a `token` query parameter on every request. See
+    authentication/buxfer-authentication.yml.
+request:
+  read_methods: GET (query parameters)
+  write_methods: POST (form-encoded body; GET parameters are ignored on POST)
+  content_type: application/x-www-form-urlencoded
+response_envelope:
+  shape: '{ "response": { "status": ..., <method fields> } }'
+  status_field: status
+  success_value: OK
+  error_value: 'ERROR: <description>'
+  note: >-
+    Success and failure are both signaled inside the JSON envelope via the
+    status string; the API does not rely on RFC 9457 problem+json.
+pagination:
+  style: page-number
+  param: page
+  page_size: 100
+  page_size_fixed: true
+  total_field: numTransactions
+  applies_to:
+  - listTransactions
+  note: transactions returns at most 100 records per call; increment page to fetch more.
+idempotency:
+  supported: false
+  note: >-
+    Buxfer documents no idempotency-key header or parameter; transaction_add is
+    not idempotent. Retries may create duplicate transactions.
+versioning:
+  scheme: none
+  detail: The API is unversioned; there is no version segment in the base path.
+rate_limiting:
+  documented: false
+  note: No published rate limits or rate-limit response headers.
+metadata:
+  documented: false
+request_tracing:
+  request_id_header: null
+  documented: false
+cross_links:
+  authentication: authentication/buxfer-authentication.yml
+  errors: errors/buxfer-problem-types.yml
+  lifecycle: lifecycle/buxfer-lifecycle.yml
+  data_model: data-model/buxfer-data-model.yml

@@ -1,0 +1,78 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/buxfer-openapi.yml
+docs: https://www.buxfer.com/help/api
+entities:
+- name: Account
+  key: id
+  fields: [id, name, bank, balance, lastSynced]
+  description: A bank, credit-card, investment or manual account with a balance.
+- name: Transaction
+  key: id
+  fields: [id, description, date, type, amount, accountId, tags, status, extraInfo]
+  description: A single financial entry (expense, income, transfer, investment, shared bill, loan, settlement).
+- name: Tag
+  key: id
+  fields: [id, name, parentId]
+  description: A hierarchical category applied to transactions.
+- name: Budget
+  key: id
+  fields: [id, name, limit, remaining, period, currentPeriod, tags, keywords]
+  description: A spending limit scoped to tags/keywords over a period.
+- name: Reminder
+  key: id
+  fields: [id, name, startDate, period, amount, accountId]
+  description: A scheduled financial reminder tied to an account.
+- name: Group
+  key: id
+  fields: [id, name, consolidated, members]
+  description: A shared-expense group with member balances.
+- name: Contact
+  key: id
+  fields: [id, name, email, balance]
+  description: A person you share expenses or loans with.
+- name: Loan
+  key: entity
+  fields: [entity, type, balance, description]
+  description: An outstanding loan against a group or contact.
+relationships:
+- from: Transaction
+  to: Account
+  kind: belongs_to
+  via: accountId
+- from: Transaction
+  to: Tag
+  kind: has_many
+  via: tags
+- from: Transaction
+  to: Account
+  kind: belongs_to
+  via: fromAccountId
+  note: transfers only
+- from: Transaction
+  to: Account
+  kind: belongs_to
+  via: toAccountId
+  note: transfers only
+- from: Budget
+  to: Tag
+  kind: has_many
+  via: tags
+- from: Reminder
+  to: Account
+  kind: belongs_to
+  via: accountId
+- from: Group
+  to: Contact
+  kind: has_many
+  via: members
+- from: Loan
+  to: Group
+  kind: belongs_to
+  via: entity
+  note: when type=group
+- from: Loan
+  to: Contact
+  kind: belongs_to
+  via: entity
+  note: when type=contact

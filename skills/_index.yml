@@ -1,0 +1,16 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/buxfer-openapi.yml
+skills:
+- file: buxfer-record-expense.md
+  name: Record an expense in Buxfer
+  api: openapi/buxfer-openapi.yml
+  operations: [login, listAccounts, addTransaction]
+- file: buxfer-review-budgets.md
+  name: Review Buxfer budgets and recent spending
+  api: openapi/buxfer-openapi.yml
+  operations: [login, listBudgets, listTransactions]
+- file: buxfer-import-statement.md
+  name: Import a bank statement into Buxfer
+  api: openapi/buxfer-openapi.yml
+  operations: [login, listAccounts, uploadStatement]

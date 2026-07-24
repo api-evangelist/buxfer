@@ -1,0 +1,22 @@
+{
+  "provider": "buxfer",
+  "sources": [
+    "buxfer-accounts-api-openapi.yml",
+    "buxfer-authentication-api-openapi.yml",
+    "buxfer-organization-api-openapi.yml",
+    "buxfer-social-api-openapi.yml",
+    "buxfer-transactions-api-openapi.yml"
+  ],
+  "outputs": [
+    "buxfer-accounts-api-openapi.yml",
+    "buxfer-authentication-api-openapi.yml",
+    "buxfer-organization-api-openapi.yml",
+    "buxfer-social-api-openapi.yml",
+    "buxfer-transactions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

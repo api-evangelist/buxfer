@@ -163,6 +163,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Overlay
+  url: overlays/buxfer-openapi-overlay.yaml
 - type: TrustCenter
   url: security/buxfer-trust-center.yml
 - type: Compliance

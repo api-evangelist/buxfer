@@ -2,10 +2,8 @@ generated: '2026-07-18'
 method: derived
 status: candidate
 source: openapi/buxfer-openapi.yml
-note: >-
-  No official Buxfer MCP server was found. This is a candidate tool list derived
-  one-to-one from the documented Buxfer API operations. Auth would bind the
-  login-token model (authentication/buxfer-authentication.yml).
+note: No official Buxfer MCP server was found. This is a candidate tool list derived one-to-one from the
+  documented Buxfer API operations. Auth would bind the login-token model (authentication/buxfer-authentication.yml).
 server:
   name: buxfer
   transport: http
@@ -50,3 +48,9 @@ tools:
 - name: list_contacts
   description: List contacts with outstanding balances.
   source_operation: openapi/buxfer-openapi.yml#listContacts
+deployment:
+  mode: none
+  verified: derived
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census

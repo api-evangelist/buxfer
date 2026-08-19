@@ -1,0 +1,307 @@
+{
+  "item": [
+    {
+      "id": "ee71d308-4e5d-41eb-babc-06d0a7645640",
+      "name": "Social",
+      "description": {
+        "content": "Groups, contacts and loans for shared expenses.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2c09640c-35fb-4b39-9490-9c3eaa77e8bf",
+          "name": "List loans",
+          "request": {
+            "name": "List loans",
+            "description": {
+              "content": "List outstanding loans with friends and groups.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "loans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3139bc5e-3f30-4cda-9f2e-ef98245bbbd9",
+              "name": "Loans list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "loans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"string\",\n    \"loans\": [\n      {\n        \"entity\": \"string\",\n        \"type\": \"group\",\n        \"balance\": 3247.7372168285424,\n        \"description\": \"string\"\n      },\n      {\n        \"entity\": \"string\",\n        \"type\": \"contact\",\n        \"balance\": 4411.528782858417,\n        \"description\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5976ed6c-04f3-4b5c-ab21-7e8e096b7c84",
+          "name": "List groups",
+          "request": {
+            "name": "List groups",
+            "description": {
+              "content": "List shared-expense groups with member balances.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "db5141c0-ab38-4f35-8071-eb3fab2f55fd",
+              "name": "Groups list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"string\",\n    \"groups\": [\n      {\n        \"id\": 1009,\n        \"name\": \"string\",\n        \"consolidated\": true,\n        \"members\": [\n          {\n            \"id\": 9257,\n            \"name\": \"string\",\n            \"email\": \"string\",\n            \"balance\": 1711.7680360124166\n          },\n          {\n            \"id\": 898,\n            \"name\": \"string\",\n            \"email\": \"string\",\n            \"balance\": 7311.515448892072\n          }\n        ]\n      },\n      {\n        \"id\": 9800,\n        \"name\": \"string\",\n        \"consolidated\": false,\n        \"members\": [\n          {\n            \"id\": 3072,\n            \"name\": \"string\",\n            \"email\": \"string\",\n            \"balance\": 9209.17681763455\n          },\n          {\n            \"id\": 7712,\n            \"name\": \"string\",\n            \"email\": \"string\",\n            \"balance\": 6001.282507512211\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "16353854-3ef1-428d-b64f-14caafd8ccaa",
+          "name": "List contacts",
+          "request": {
+            "name": "List contacts",
+            "description": {
+              "content": "List contacts with outstanding balances.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c9875e56-c960-4e33-aa0b-dbb62d325a50",
+              "name": "Contacts list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"string\",\n    \"contacts\": [\n      {\n        \"id\": 3855,\n        \"name\": \"string\",\n        \"email\": \"string\",\n        \"balance\": 3038.028131005408\n      },\n      {\n        \"id\": 1817,\n        \"name\": \"string\",\n        \"email\": \"string\",\n        \"balance\": 8604.232360929414\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.buxfer.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "71ff7f55-c7ac-4106-8759-4acc84f928af",
+    "name": "Buxfer Accounts Social API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Faithful OpenAPI representation of the publicly documented Buxfer REST API (https://www.buxfer.com/help/api). Buxfer is a personal finance and money management platform; this API lets a client read accounts, transactions, tags, budgets, reminders, groups, contacts and loans, and create/edit/delete transactions and upload statements. Authentication is a login call that returns an ephemeral token which must be passed as a `token` query parameter on every subsequent request. Responses use a JSON envelope with a `response` object whose `status` is either `OK` or `ERROR: <description>`.\n\nContact Support:\n Name: Buxfer Support",
+      "type": "text/plain"
+    }
+  }
+}

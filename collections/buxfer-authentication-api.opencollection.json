@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Buxfer Accounts Authentication API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "token",
+      "value": "{{token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Log in and obtain an API token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.buxfer.com/api/login",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "email",
+                  "value": ""
+                },
+                {
+                  "name": "password",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Authenticate with an account email and password and receive a unique ephemeral token to include as the `token` parameter on all other calls."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

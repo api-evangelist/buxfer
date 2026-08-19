@@ -1,0 +1,192 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Buxfer Accounts Transactions API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "token",
+      "value": "{{token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.buxfer.com/api/transaction_add",
+            "body": {
+              "type": "form-urlencoded",
+              "data": []
+            }
+          },
+          "docs": "Create an expense, income, refund, payment, transfer, investment, shared bill, loan or settlement transaction."
+        },
+        {
+          "info": {
+            "name": "Edit a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.buxfer.com/api/transaction_edit",
+            "body": {
+              "type": "form-urlencoded",
+              "data": []
+            }
+          },
+          "docs": "Modify an existing transaction identified by id."
+        },
+        {
+          "info": {
+            "name": "Delete a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.buxfer.com/api/transaction_delete",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Remove a transaction identified by id."
+        },
+        {
+          "info": {
+            "name": "Upload a statement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.buxfer.com/api/upload_statement",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "accountId",
+                  "value": ""
+                },
+                {
+                  "name": "statement",
+                  "value": ""
+                },
+                {
+                  "name": "dateFormat",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Import a bank or credit-card statement into an account."
+        },
+        {
+          "info": {
+            "name": "List transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.buxfer.com/api/transactions",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "accountName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tagId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tagName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "budgetId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "budgetName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "contactId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "contactName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve transactions, optionally filtered by account, tag, date range, budget, contact, group or status. Returns at most 100 transactions per page; use the `page` parameter to paginate."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

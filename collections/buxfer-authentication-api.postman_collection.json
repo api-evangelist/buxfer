@@ -1,0 +1,229 @@
+{
+  "item": [
+    {
+      "id": "bd8673da-14b8-4457-84b2-70ecad176f1d",
+      "name": "Authentication",
+      "description": {
+        "content": "Obtain an ephemeral API token.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5ab6fabc-f05e-4078-bb82-d7aa59d2ee1b",
+          "name": "Log in and obtain an API token",
+          "request": {
+            "name": "Log in and obtain an API token",
+            "description": {
+              "content": "Authenticate with an account email and password and receive a unique ephemeral token to include as the `token` parameter on all other calls.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "login"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<email>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "dc07be23-3ef2-4b30-a0c5-fb612d5fc00e",
+              "name": "Login result with token on success.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "<email>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"string\",\n    \"token\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a33a3366-8edd-44d3-8458-4f618955aaf0",
+              "name": "Invalid credentials (returned as an ERROR status in the envelope).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "email",
+                      "value": "<email>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"ERROR: invalid token\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.buxfer.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e2946ff8-5b7c-4a49-be00-aaa1b759382f",
+    "name": "Buxfer Accounts Authentication API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Faithful OpenAPI representation of the publicly documented Buxfer REST API (https://www.buxfer.com/help/api). Buxfer is a personal finance and money management platform; this API lets a client read accounts, transactions, tags, budgets, reminders, groups, contacts and loans, and create/edit/delete transactions and upload statements. Authentication is a login call that returns an ephemeral token which must be passed as a `token` query parameter on every subsequent request. Responses use a JSON envelope with a `response` object whose `status` is either `OK` or `ERROR: <description>`.\n\nContact Support:\n Name: Buxfer Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Buxfer Accounts API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "token",
+      "value": "{{token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.buxfer.com/api/accounts",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all accounts with current balances and last-sync timestamps."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

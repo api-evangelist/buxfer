@@ -1,0 +1,307 @@
+{
+  "item": [
+    {
+      "id": "b70d853b-12c5-4c4e-bf5a-286cc6099d7b",
+      "name": "Organization",
+      "description": {
+        "content": "Tags, budgets, reminders.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "235b1987-4a46-4466-812a-82b1641b84c7",
+          "name": "List tags",
+          "request": {
+            "name": "List tags",
+            "description": {
+              "content": "List all transaction tags with hierarchy information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tags"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f31c941e-8749-4dbd-904c-ad3cef0438b6",
+              "name": "Tags list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"string\",\n    \"tags\": [\n      {\n        \"id\": 3223,\n        \"name\": \"string\",\n        \"parentId\": 7948\n      },\n      {\n        \"id\": 3470,\n        \"name\": \"string\",\n        \"parentId\": 8888\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "90557c10-1560-498d-b6f0-fb5d2495559c",
+          "name": "List budgets",
+          "request": {
+            "name": "List budgets",
+            "description": {
+              "content": "List budgets with spending limits and remaining balances.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "budgets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "71574b07-8b18-480e-9cfc-a3ed9114aeee",
+              "name": "Budgets list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "budgets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"string\",\n    \"budgets\": [\n      {\n        \"id\": 6876,\n        \"name\": \"string\",\n        \"limit\": 1440.8654119142527,\n        \"remaining\": 3964.917125867896,\n        \"period\": \"string\",\n        \"currentPeriod\": \"string\",\n        \"tags\": \"string\",\n        \"keywords\": \"string\"\n      },\n      {\n        \"id\": 4407,\n        \"name\": \"string\",\n        \"limit\": 322.6085187472205,\n        \"remaining\": 3040.38972678909,\n        \"period\": \"string\",\n        \"currentPeriod\": \"string\",\n        \"tags\": \"string\",\n        \"keywords\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "589a8b30-d3a3-40b3-a533-14ac1681d182",
+          "name": "List reminders",
+          "request": {
+            "name": "List reminders",
+            "description": {
+              "content": "List all financial reminders.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reminders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "63f47382-e27e-4b7d-b7cc-82c7af81a020",
+              "name": "Reminders list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reminders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"string\",\n    \"reminders\": [\n      {\n        \"id\": 8389,\n        \"name\": \"string\",\n        \"startDate\": \"string\",\n        \"period\": \"string\",\n        \"amount\": 3685.83523619177,\n        \"accountId\": 7700\n      },\n      {\n        \"id\": 4831,\n        \"name\": \"string\",\n        \"startDate\": \"string\",\n        \"period\": \"string\",\n        \"amount\": 3462.292788975051,\n        \"accountId\": 890\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.buxfer.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c7e39916-ddaa-4c67-9c71-23292ad6a2f2",
+    "name": "Buxfer Accounts Organization API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Faithful OpenAPI representation of the publicly documented Buxfer REST API (https://www.buxfer.com/help/api). Buxfer is a personal finance and money management platform; this API lets a client read accounts, transactions, tags, budgets, reminders, groups, contacts and loans, and create/edit/delete transactions and upload statements. Authentication is a login call that returns an ephemeral token which must be passed as a `token` query parameter on every subsequent request. Responses use a JSON envelope with a `response` object whose `status` is either `OK` or `ERROR: <description>`.\n\nContact Support:\n Name: Buxfer Support",
+      "type": "text/plain"
+    }
+  }
+}

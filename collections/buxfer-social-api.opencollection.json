@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Buxfer Accounts Social API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "token",
+      "value": "{{token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Social",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List loans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.buxfer.com/api/loans",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List outstanding loans with friends and groups."
+        },
+        {
+          "info": {
+            "name": "List groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.buxfer.com/api/groups",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List shared-expense groups with member balances."
+        },
+        {
+          "info": {
+            "name": "List contacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.buxfer.com/api/contacts",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List contacts with outstanding balances."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

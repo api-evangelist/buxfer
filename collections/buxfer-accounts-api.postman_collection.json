@@ -1,0 +1,135 @@
+{
+  "item": [
+    {
+      "id": "d6618462-a06d-4123-bf62-beeb4b219e2b",
+      "name": "Accounts",
+      "description": {
+        "content": "List accounts and balances.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "19c24071-376c-4c06-94ad-528c3662ad64",
+          "name": "List accounts",
+          "request": {
+            "name": "List accounts",
+            "description": {
+              "content": "List all accounts with current balances and last-sync timestamps.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b6a0f5f5-b6ff-44f6-b5e0-68f3d08ad07d",
+              "name": "Accounts list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"string\",\n    \"accounts\": [\n      {\n        \"id\": 6102,\n        \"name\": \"string\",\n        \"bank\": \"string\",\n        \"balance\": 7754.699566033014,\n        \"lastSynced\": \"string\"\n      },\n      {\n        \"id\": 971,\n        \"name\": \"string\",\n        \"bank\": \"string\",\n        \"balance\": 468.00337421095685,\n        \"lastSynced\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.buxfer.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d476aeca-a781-4288-84db-f48a7b874fa0",
+    "name": "Buxfer Accounts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Faithful OpenAPI representation of the publicly documented Buxfer REST API (https://www.buxfer.com/help/api). Buxfer is a personal finance and money management platform; this API lets a client read accounts, transactions, tags, budgets, reminders, groups, contacts and loans, and create/edit/delete transactions and upload statements. Authentication is a login call that returns an ephemeral token which must be passed as a `token` query parameter on every subsequent request. Responses use a JSON envelope with a `response` object whose `status` is either `OK` or `ERROR: <description>`.\n\nContact Support:\n Name: Buxfer Support",
+      "type": "text/plain"
+    }
+  }
+}

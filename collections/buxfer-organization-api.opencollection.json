@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Buxfer Accounts Organization API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "token",
+      "value": "{{token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Organization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.buxfer.com/api/tags",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all transaction tags with hierarchy information."
+        },
+        {
+          "info": {
+            "name": "List budgets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.buxfer.com/api/budgets",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List budgets with spending limits and remaining balances."
+        },
+        {
+          "info": {
+            "name": "List reminders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.buxfer.com/api/reminders",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all financial reminders."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

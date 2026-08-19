@@ -1,0 +1,1506 @@
+{
+  "item": [
+    {
+      "id": "81425a07-2305-4eb9-aa8b-a8e1760d78da",
+      "name": "Transactions",
+      "description": {
+        "content": "Create, edit, delete, list and import transactions.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8797438b-3f25-4541-96f9-431ad93305d1",
+          "name": "Add a transaction",
+          "request": {
+            "name": "Add a transaction",
+            "description": {
+              "content": "Create an expense, income, refund, payment, transfer, investment, shared bill, loan or settlement transaction.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "transaction_add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "amount",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "fromAccountId",
+                  "value": "<integer>",
+                  "description": "Source account for transfers."
+                },
+                {
+                  "disabled": false,
+                  "key": "toAccountId",
+                  "value": "<integer>",
+                  "description": "Destination account for transfers."
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<date>",
+                  "description": "YYYY-MM-DD."
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>",
+                  "description": "Comma-separated tag names."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "payers",
+                  "value": "<string>",
+                  "description": "JSON array of payers (sharedBill)."
+                },
+                {
+                  "disabled": false,
+                  "key": "sharers",
+                  "value": "<string>",
+                  "description": "JSON array of sharers (sharedBill)."
+                },
+                {
+                  "disabled": false,
+                  "key": "isEvenSplit",
+                  "value": "<boolean>",
+                  "description": "Even split flag (sharedBill)."
+                },
+                {
+                  "disabled": false,
+                  "key": "loanedBy",
+                  "value": "<string>",
+                  "description": "uid or email (loan)."
+                },
+                {
+                  "disabled": false,
+                  "key": "borrowedBy",
+                  "value": "<string>",
+                  "description": "uid or email (loan)."
+                },
+                {
+                  "disabled": false,
+                  "key": "paidBy",
+                  "value": "<string>",
+                  "description": "uid or email (paidForFriend)."
+                },
+                {
+                  "disabled": false,
+                  "key": "paidFor",
+                  "value": "<string>",
+                  "description": "uid or email (paidForFriend)."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f0322974-df6a-4461-a285-ae60868f9147",
+              "name": "The created transaction.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transaction_add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "amount",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "accountId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Source account for transfers.",
+                        "type": "text/plain"
+                      },
+                      "key": "fromAccountId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Destination account for transfers.",
+                        "type": "text/plain"
+                      },
+                      "key": "toAccountId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "YYYY-MM-DD.",
+                        "type": "text/plain"
+                      },
+                      "key": "date",
+                      "value": "<date>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Comma-separated tag names.",
+                        "type": "text/plain"
+                      },
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "JSON array of payers (sharedBill).",
+                        "type": "text/plain"
+                      },
+                      "key": "payers",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "JSON array of sharers (sharedBill).",
+                        "type": "text/plain"
+                      },
+                      "key": "sharers",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Even split flag (sharedBill).",
+                        "type": "text/plain"
+                      },
+                      "key": "isEvenSplit",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "uid or email (loan).",
+                        "type": "text/plain"
+                      },
+                      "key": "loanedBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "uid or email (loan).",
+                        "type": "text/plain"
+                      },
+                      "key": "borrowedBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "uid or email (paidForFriend).",
+                        "type": "text/plain"
+                      },
+                      "key": "paidBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "uid or email (paidForFriend).",
+                        "type": "text/plain"
+                      },
+                      "key": "paidFor",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"string\",\n    \"id\": 7887,\n    \"description\": \"string\",\n    \"date\": \"string\",\n    \"type\": \"string\",\n    \"amount\": 9943.32900907012,\n    \"expenseAmount\": 5961.670563650242,\n    \"accountId\": 3060,\n    \"accountName\": \"string\",\n    \"tags\": \"string\",\n    \"tagNames\": \"string\",\n    \"status_field\": \"string\",\n    \"sortDate\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "60bf1211-4f6f-4d47-bd52-6a584024f9e3",
+              "name": "Validation error in the envelope status.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transaction_add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "amount",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "accountId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Source account for transfers.",
+                        "type": "text/plain"
+                      },
+                      "key": "fromAccountId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Destination account for transfers.",
+                        "type": "text/plain"
+                      },
+                      "key": "toAccountId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "YYYY-MM-DD.",
+                        "type": "text/plain"
+                      },
+                      "key": "date",
+                      "value": "<date>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Comma-separated tag names.",
+                        "type": "text/plain"
+                      },
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "JSON array of payers (sharedBill).",
+                        "type": "text/plain"
+                      },
+                      "key": "payers",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "JSON array of sharers (sharedBill).",
+                        "type": "text/plain"
+                      },
+                      "key": "sharers",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Even split flag (sharedBill).",
+                        "type": "text/plain"
+                      },
+                      "key": "isEvenSplit",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "uid or email (loan).",
+                        "type": "text/plain"
+                      },
+                      "key": "loanedBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "uid or email (loan).",
+                        "type": "text/plain"
+                      },
+                      "key": "borrowedBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "uid or email (paidForFriend).",
+                        "type": "text/plain"
+                      },
+                      "key": "paidBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "uid or email (paidForFriend).",
+                        "type": "text/plain"
+                      },
+                      "key": "paidFor",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"ERROR: invalid token\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "482e6edd-028b-475c-a4dc-98bd9730fc46",
+          "name": "Edit a transaction",
+          "request": {
+            "name": "Edit a transaction",
+            "description": {
+              "content": "Modify an existing transaction identified by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "transaction_edit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "amount",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromAccountId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "toAccountId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "payers",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sharers",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isEvenSplit",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "loanedBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "borrowedBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "paidBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "paidFor",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bacdb4c9-8e6d-41dc-87d5-e7db1f639537",
+              "name": "The updated transaction.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transaction_edit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "accountId",
+                      "value": "2200"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "amount",
+                      "value": "172.59122781042802"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "description",
+                      "value": "string"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "type",
+                      "value": "paidForFriend"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "fromAccountId",
+                      "value": "3161"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "toAccountId",
+                      "value": "8087"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "date",
+                      "value": "1986-12-15"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "tags",
+                      "value": "string"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "status",
+                      "value": "pending"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "payers",
+                      "value": "string"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "sharers",
+                      "value": "string"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "isEvenSplit",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "loanedBy",
+                      "value": "string"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "borrowedBy",
+                      "value": "string"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "paidBy",
+                      "value": "string"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "paidFor",
+                      "value": "string"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"string\",\n    \"id\": 7887,\n    \"description\": \"string\",\n    \"date\": \"string\",\n    \"type\": \"string\",\n    \"amount\": 9943.32900907012,\n    \"expenseAmount\": 5961.670563650242,\n    \"accountId\": 3060,\n    \"accountName\": \"string\",\n    \"tags\": \"string\",\n    \"tagNames\": \"string\",\n    \"status_field\": \"string\",\n    \"sortDate\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c479b31c-7a30-4df6-9dea-fa71854944a2",
+              "name": "Validation error in the envelope status.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transaction_edit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "accountId",
+                      "value": "2200"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "amount",
+                      "value": "172.59122781042802"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "description",
+                      "value": "string"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "type",
+                      "value": "paidForFriend"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "fromAccountId",
+                      "value": "3161"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "toAccountId",
+                      "value": "8087"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "date",
+                      "value": "1986-12-15"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "tags",
+                      "value": "string"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "status",
+                      "value": "pending"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "payers",
+                      "value": "string"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "sharers",
+                      "value": "string"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "isEvenSplit",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "loanedBy",
+                      "value": "string"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "borrowedBy",
+                      "value": "string"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "paidBy",
+                      "value": "string"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "paidFor",
+                      "value": "string"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"ERROR: invalid token\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7a6ba119-b95b-4e59-a7b1-72dcda50ce3c",
+          "name": "Delete a transaction",
+          "request": {
+            "name": "Delete a transaction",
+            "description": {
+              "content": "Remove a transaction identified by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "transaction_delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2aba348c-f6d0-4c4f-adc5-eb0838af47d8",
+              "name": "Delete acknowledgement (status only).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transaction_delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"OK\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79059954-de97-4d8a-987b-7fa43cd5ea48",
+              "name": "Error in the envelope status.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transaction_delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "id",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"ERROR: invalid token\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b23234dc-44d8-47bc-80fa-1fb60c5bab42",
+          "name": "Upload a statement",
+          "request": {
+            "name": "Upload a statement",
+            "description": {
+              "content": "Import a bank or credit-card statement into an account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "upload_statement"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "statement",
+                  "value": "<string>",
+                  "description": "(Required) Raw statement text content."
+                },
+                {
+                  "disabled": false,
+                  "key": "dateFormat",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a5fc5bbe-1df6-4270-b54d-37422e72fbbe",
+              "name": "Upload result.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "upload_statement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "accountId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Raw statement text content.",
+                        "type": "text/plain"
+                      },
+                      "key": "statement",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "dateFormat",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"string\",\n    \"uploaded\": true,\n    \"balance\": 1797.7772336584553\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bceecf9b-14a2-4d85-92e7-43b100d8c214",
+              "name": "Error in the envelope status.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "upload_statement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "accountId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Raw statement text content.",
+                        "type": "text/plain"
+                      },
+                      "key": "statement",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "dateFormat",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"ERROR: invalid token\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c9807af7-d857-412e-b35e-2222f02effcc",
+          "name": "List transactions",
+          "request": {
+            "name": "List transactions",
+            "description": {
+              "content": "Retrieve transactions, optionally filtered by account, tag, date range, budget, contact, group or status. Returns at most 100 transactions per page; use the `page` parameter to paginate.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tagId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tagName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "budgetId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "budgetName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "contactId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "contactName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "groupId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "groupName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e3485fff-7ca0-420f-a4f6-1b9fb328b942",
+              "name": "A page of transactions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "accountName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tagId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "tagName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "budgetId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "budgetName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contactId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "contactName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "groupId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "groupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"status\": \"string\",\n    \"numTransactions\": 4048,\n    \"transactions\": [\n      {\n        \"id\": 7264,\n        \"description\": \"string\",\n        \"date\": \"string\",\n        \"type\": \"string\",\n        \"amount\": 1735.6763869648028,\n        \"accountId\": 847,\n        \"tags\": \"string\",\n        \"extraInfo\": \"string\"\n      },\n      {\n        \"id\": 2195,\n        \"description\": \"string\",\n        \"date\": \"string\",\n        \"type\": \"string\",\n        \"amount\": 9577.97185639066,\n        \"accountId\": 5272,\n        \"tags\": \"string\",\n        \"extraInfo\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.buxfer.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8d7526d4-99fd-483c-b9dc-d6fa6b46a5ea",
+    "name": "Buxfer Accounts Transactions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Faithful OpenAPI representation of the publicly documented Buxfer REST API (https://www.buxfer.com/help/api). Buxfer is a personal finance and money management platform; this API lets a client read accounts, transactions, tags, budgets, reminders, groups, contacts and loans, and create/edit/delete transactions and upload statements. Authentication is a login call that returns an ephemeral token which must be passed as a `token` query parameter on every subsequent request. Responses use a JSON envelope with a `response` object whose `status` is either `OK` or `ERROR: <description>`.\n\nContact Support:\n Name: Buxfer Support",
+      "type": "text/plain"
+    }
+  }
+}

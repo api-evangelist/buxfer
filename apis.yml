@@ -43,6 +43,17 @@ tags:
 - Banking
 - Fintech
 - Financial Data
+- Transaction
+- Investments
+- Expense Tracking
+tags_raw:
+- Company
+- Personal Finance
+- Money Management
+- Budgeting
+- Banking
+- Fintech
+- Financial Data
 - Transactions
 - Investments
 - Expense Tracking
@@ -53,6 +64,8 @@ apis:
   humanURL: https://www.buxfer.com/help/api
   baseURL: https://www.buxfer.com/api
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -141,6 +154,8 @@ apis:
   humanURL: https://www.buxfer.com/help/api
   baseURL: https://www.buxfer.com/api
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI

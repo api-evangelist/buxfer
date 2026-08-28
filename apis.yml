@@ -12,6 +12,18 @@ description: >-
   creating, editing and deleting transactions and uploading statements.
   Authentication uses a login call that returns an ephemeral token passed on
   every subsequent request. Buxfer is a Y Combinator company.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve

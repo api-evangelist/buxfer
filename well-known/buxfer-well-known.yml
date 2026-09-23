@@ -1,15 +1,21 @@
 generated: '2026-07-18'
 method: searched
 host: https://www.buxfer.com
-documents:
-- path: /.well-known/security.txt
-  status: 404
-- path: /.well-known/openid-configuration
-  status: not-probed
-  note: Buxfer does not use OIDC (login-token auth); no OIDC discovery expected.
-- path: /.well-known/oauth-authorization-server
-  status: not-probed
-  note: No OAuth; RFC 8414 metadata not expected.
-notes: >-
-  No /.well-known discovery documents were found on www.buxfer.com. security.txt
-  returned 404. Recorded as valid negative results.
+notes: No /.well-known discovery documents were found on www.buxfer.com. security.txt returned 404. Recorded
+  as valid negative results.
+hosts:
+- host: https://www.buxfer.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: not-probed
+    note: Buxfer does not use OIDC (login-token auth); no OIDC discovery expected.
+  - path: /.well-known/oauth-authorization-server
+    status: not-probed
+    note: No OAuth; RFC 8414 metadata not expected.
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.

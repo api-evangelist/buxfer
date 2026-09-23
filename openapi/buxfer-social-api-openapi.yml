@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Buxfer Accounts Social API
+  title: Buxfer Social API
   version: '1.0'
-  description: 'Faithful OpenAPI representation of the publicly documented Buxfer REST API (https://www.buxfer.com/help/api). Buxfer is a personal finance and money management platform; this API lets a client read accounts, transactions, tags, budgets, reminders, groups, contacts and loans, and create/edit/delete transactions and upload statements. Authentication is a login call that returns an ephemeral token which must be passed as a `token` query parameter on every subsequent request. Responses use a JSON envelope with a `response` object whose `status` is either `OK` or `ERROR: <description>`.'
+  description: Faithful OpenAPI representation of the publicly documented Buxfer REST API (https://www.buxfer.com/help/api).
   contact:
     name: Buxfer Support
     url: https://www.buxfer.com/help/

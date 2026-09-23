@@ -1,11 +1,7 @@
 {
   "provider": "buxfer",
   "sources": [
-    "buxfer-accounts-api-openapi.yml",
-    "buxfer-authentication-api-openapi.yml",
-    "buxfer-organization-api-openapi.yml",
-    "buxfer-social-api-openapi.yml",
-    "buxfer-transactions-api-openapi.yml"
+    "_original/buxfer-openapi.yml"
   ],
   "outputs": [
     "buxfer-accounts-api-openapi.yml",
@@ -17,6 +13,16 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "buxfer-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "buxfer-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "buxfer-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "buxfer-organization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "buxfer-social-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "buxfer-transactions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

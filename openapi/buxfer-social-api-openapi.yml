@@ -109,17 +109,6 @@ paths:
                           $ref: '#/components/schemas/Contact'
 components:
   schemas:
-    Contact:
-      type: object
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-        email:
-          type: string
-        balance:
-          type: number
     Group:
       type: object
       properties:
@@ -156,6 +145,17 @@ components:
           type: number
         description:
           type: string
+    Contact:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        balance:
+          type: number
   securitySchemes:
     token:
       type: apiKey

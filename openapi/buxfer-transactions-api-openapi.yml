@@ -300,6 +300,25 @@ components:
               type: string
             sortDate:
               type: string
+    StatusResponse:
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            status:
+              type: string
+              example: OK
+    ErrorResponse:
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            status:
+              type: string
+              description: 'Error status string of the form: ERROR: <description>'
+              example: 'ERROR: invalid token'
     TransactionWrite:
       type: object
       required:
@@ -370,25 +389,6 @@ components:
         paidFor:
           type: string
           description: uid or email (paidForFriend).
-    StatusResponse:
-      type: object
-      properties:
-        response:
-          type: object
-          properties:
-            status:
-              type: string
-              example: OK
-    ErrorResponse:
-      type: object
-      properties:
-        response:
-          type: object
-          properties:
-            status:
-              type: string
-              description: 'Error status string of the form: ERROR: <description>'
-              example: 'ERROR: invalid token'
     Transaction:
       type: object
       properties:

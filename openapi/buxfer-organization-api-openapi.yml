@@ -124,15 +124,6 @@ components:
           type: number
         accountId:
           type: integer
-    Tag:
-      type: object
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-        parentId:
-          type: integer
     Budget:
       type: object
       properties:
@@ -152,6 +143,15 @@ components:
           type: string
         keywords:
           type: string
+    Tag:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        parentId:
+          type: integer
   securitySchemes:
     token:
       type: apiKey

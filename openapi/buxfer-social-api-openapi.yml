@@ -109,6 +109,31 @@ paths:
                           $ref: '#/components/schemas/Contact'
 components:
   schemas:
+    Contact:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        balance:
+          type: number
+    Loan:
+      type: object
+      properties:
+        entity:
+          type: string
+        type:
+          type: string
+          enum:
+          - group
+          - contact
+        balance:
+          type: number
+        description:
+          type: string
     Group:
       type: object
       properties:
@@ -131,31 +156,6 @@ components:
                 type: string
               balance:
                 type: number
-    Loan:
-      type: object
-      properties:
-        entity:
-          type: string
-        type:
-          type: string
-          enum:
-          - group
-          - contact
-        balance:
-          type: number
-        description:
-          type: string
-    Contact:
-      type: object
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-        email:
-          type: string
-        balance:
-          type: number
   securitySchemes:
     token:
       type: apiKey

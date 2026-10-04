@@ -55,16 +55,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    ErrorResponse:
-      type: object
-      properties:
-        response:
-          type: object
-          properties:
-            status:
-              type: string
-              description: 'Error status string of the form: ERROR: <description>'
-              example: 'ERROR: invalid token'
     LoginResponse:
       type: object
       properties:
@@ -76,6 +66,16 @@ components:
             token:
               type: string
               description: Ephemeral API token.
+    ErrorResponse:
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            status:
+              type: string
+              description: 'Error status string of the form: ERROR: <description>'
+              example: 'ERROR: invalid token'
   securitySchemes:
     token:
       type: apiKey

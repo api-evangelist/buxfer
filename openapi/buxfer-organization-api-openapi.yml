@@ -109,6 +109,15 @@ paths:
                           $ref: '#/components/schemas/Reminder'
 components:
   schemas:
+    Tag:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        parentId:
+          type: integer
     Reminder:
       type: object
       properties:
@@ -143,15 +152,6 @@ components:
           type: string
         keywords:
           type: string
-    Tag:
-      type: object
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-        parentId:
-          type: integer
   securitySchemes:
     token:
       type: apiKey

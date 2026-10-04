@@ -268,16 +268,6 @@ paths:
                           $ref: '#/components/schemas/Transaction'
 components:
   schemas:
-    ErrorResponse:
-      type: object
-      properties:
-        response:
-          type: object
-          properties:
-            status:
-              type: string
-              description: 'Error status string of the form: ERROR: <description>'
-              example: 'ERROR: invalid token'
     TransactionMutationResponse:
       type: object
       properties:
@@ -310,25 +300,6 @@ components:
               type: string
             sortDate:
               type: string
-    Transaction:
-      type: object
-      properties:
-        id:
-          type: integer
-        description:
-          type: string
-        date:
-          type: string
-        type:
-          type: string
-        amount:
-          type: number
-        accountId:
-          type: integer
-        tags:
-          type: string
-        extraInfo:
-          type: string
     StatusResponse:
       type: object
       properties:
@@ -408,6 +379,35 @@ components:
         paidFor:
           type: string
           description: uid or email (paidForFriend).
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: integer
+        description:
+          type: string
+        date:
+          type: string
+        type:
+          type: string
+        amount:
+          type: number
+        accountId:
+          type: integer
+        tags:
+          type: string
+        extraInfo:
+          type: string
+    ErrorResponse:
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            status:
+              type: string
+              description: 'Error status string of the form: ERROR: <description>'
+              example: 'ERROR: invalid token'
   securitySchemes:
     token:
       type: apiKey

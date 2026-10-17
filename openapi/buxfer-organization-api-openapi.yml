@@ -118,21 +118,6 @@ components:
           type: string
         parentId:
           type: integer
-    Reminder:
-      type: object
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-        startDate:
-          type: string
-        period:
-          type: string
-        amount:
-          type: number
-        accountId:
-          type: integer
     Budget:
       type: object
       properties:
@@ -152,6 +137,21 @@ components:
           type: string
         keywords:
           type: string
+    Reminder:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        startDate:
+          type: string
+        period:
+          type: string
+        amount:
+          type: number
+        accountId:
+          type: integer
   securitySchemes:
     token:
       type: apiKey

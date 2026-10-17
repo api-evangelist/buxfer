@@ -268,6 +268,25 @@ paths:
                           $ref: '#/components/schemas/Transaction'
 components:
   schemas:
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: integer
+        description:
+          type: string
+        date:
+          type: string
+        type:
+          type: string
+        amount:
+          type: number
+        accountId:
+          type: integer
+        tags:
+          type: string
+        extraInfo:
+          type: string
     TransactionMutationResponse:
       type: object
       properties:
@@ -379,25 +398,6 @@ components:
         paidFor:
           type: string
           description: uid or email (paidForFriend).
-    Transaction:
-      type: object
-      properties:
-        id:
-          type: integer
-        description:
-          type: string
-        date:
-          type: string
-        type:
-          type: string
-        amount:
-          type: number
-        accountId:
-          type: integer
-        tags:
-          type: string
-        extraInfo:
-          type: string
     ErrorResponse:
       type: object
       properties:

@@ -64,6 +64,120 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Buxfer is a company surfaced as a portfolio company of y-combinator and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Buxfer is a personal finance and money management platform that consolidates bank, investment and retirement accounts in one place. It connects to 20,000+ banks across 70+ countries, tracks assets in 100+ currencies, and provides budgeting with real-time alerts, expense forecasting, net-worth projection, automatic transaction tagging with custom rules, investment and retirement planning, shared-expense groups, and encrypted cloud backups to Dropbox, Google Drive or OneDrive. Buxfer exposes a JSON HTTP API for reading accounts, transactions, tags, budgets, reminders, groups, contacts and loans, and for creating, editing and deleting transactions and uploading statements. Authentication uses a login call that returns an ephemeral token passed on every subsequent request. Buxfer is a Y Combinator company.
 
-Backed by: y-combinator
+**Areas:** Company · Personal Finance · Money Management · Budgeting · Banking · Fintech · Financial Data · Transaction · Investment · Expense Tracking
+
+## Buxfer on APIs.io
+
+Everything profiled for Buxfer is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/buxfer/](https://apis.io/providers/buxfer/)** — or go straight to one of the APIs or properties below.
+
+### APIs (5)
+
+- [Buxfer Accounts API](https://apis.io/apis/buxfer/buxfer-accounts-api/) — List accounts and balances.
+- [Buxfer Authentication API](https://apis.io/apis/buxfer/buxfer-authentication-api/) — Obtain an ephemeral API token.
+- [Buxfer Organization API](https://apis.io/apis/buxfer/buxfer-organization-api/) — Tags, budgets, reminders.
+- [Buxfer Social API](https://apis.io/apis/buxfer/buxfer-social-api/) — Groups, contacts and loans for shared expenses.
+- [Buxfer Transactions API](https://apis.io/apis/buxfer/buxfer-transactions-api/) — Create, edit, delete, list and import transactions.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [buxfer](https://apis.io/servers/buxfer/buxfer/)
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Buxfer Accounts API](https://apis.io/collections/buxfer/open-buxfer-accounts-api/)
+- [Buxfer Accounts Authentication API](https://apis.io/collections/buxfer/open-buxfer-authentication-api/)
+- [Buxfer Accounts Organization API](https://apis.io/collections/buxfer/open-buxfer-organization-api/)
+- [Buxfer Accounts Social API](https://apis.io/collections/buxfer/open-buxfer-social-api/)
+- [Buxfer Accounts Transactions API](https://apis.io/collections/buxfer/open-buxfer-transactions-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Buxfer Openapi Overlay](https://apis.io/overlays/buxfer/buxfer-openapi-overlay/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Buxfer Authentication](https://apis.io/security/buxfer/buxfer-authentication/)
+- [Buxfer Domain Security](https://apis.io/security/buxfer/buxfer-domain-security/)
+- [Buxfer Trust Center](https://apis.io/security/buxfer/buxfer-trust-center/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.buxfer.com/)
+- [Documentation](https://www.buxfer.com/help/api)
+- [API reference](https://www.buxfer.com/help/api)
+- [Pricing](https://www.buxfer.com/pricing/)
+- [Sign up](https://www.buxfer.com/signup/)
+- [Support](https://www.buxfer.com/help/)
+- [Blog](https://blog.buxfer.com)
+- [Compliance](https://www.buxfer.com/help/security)
+- [Terms of service](https://www.buxfer.com/terms/)
+- [Privacy policy](https://www.buxfer.com/privacy/)
+
+## API Evangelist rating
+
+**Kin Score 32.5** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 13.5 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 47.0 |
+| Access clarity | 60.5 |
+
+**Agent readiness 22.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 23.6** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/buxfer/](https://apis.io/providers/buxfer/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Buxfer: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/buxfer/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
